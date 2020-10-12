@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Билет 2</title>
+<!--    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.css">-->
+<!--    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="2.js" defer></script>
+</head>
+<body>
+
+<div id="items" class="container">
+
+
+Введите количество товаров:
+    <input v-model="message">
+    <input v-on:click="show" type="submit" value="Отобразить" id="show"/>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Article</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+                v-for="item in itemsList"
+                :key="item.id">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.article}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
